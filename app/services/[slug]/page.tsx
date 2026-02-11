@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { services } from "@/lib/services-data";
+import ServicePageContent from "@/components/services/ServicePageContent";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -39,42 +40,15 @@ export default async function ServicePage({ params }: Props) {
         <PageHero
           title={service.title}
           description={service.description}
+          gradient
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: service.title },
+          ]}
         />
 
-        <div className="prose prose-invert mx-auto max-w-3xl pt-8">
-          <p className="leading-relaxed text-slate-400">
-            {service.longDescription}
-          </p>
-        </div>
-
-        <div className="mt-16 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#00D8FF] to-cyan-400 px-8 py-4 font-semibold text-[#0A0C10] transition-opacity hover:opacity-90"
-          >
-            Start a project
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </Link>
-          <Link
-            href="/services"
-            className="rounded-xl border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white transition-colors hover:bg-white/10"
-          >
-            View all services
-          </Link>
-        </div>
+        <ServicePageContent service={service} />
       </div>
     </article>
   );
