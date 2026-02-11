@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0A0C10;
+    --foreground: #E4E8EE;
+    --primary: #00D8FF;
+    --primary-foreground: #0A0C10;
+    --card: #111318;
+    --card-foreground: #E4E8EE;
+    --muted: #1A1D24;
+    --muted-foreground: #8B92A0;
+    --border: #252A33;
+    --ring: #00D8FF;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.gradient-mesh {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 216, 255, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(0, 216, 255, 0.08), transparent),
+    radial-gradient(ellipse 40% 30% at 20% 80%, rgba(0, 216, 255, 0.06), transparent);
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, rgba(0, 216, 255, 0.08) 0%, transparent 50%, rgba(0, 216, 255, 0.04) 100%);
+}
