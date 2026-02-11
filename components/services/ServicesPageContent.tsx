@@ -151,10 +151,10 @@ export default function ServicesPageContent() {
           Tell us about your goals. We&apos;ll get back within 24 hours.
         </p>
         <CTALink
-          href="/contact"
+          href="https://calendly.com/kabirfarhan/40min"
           variant="primary"
           className="mt-8"
-          aria-label="Get in touch - Contact itenx"
+          aria-label="Get in touch - Schedule a call with itenx"
         >
           Get in touch
         </CTALink>

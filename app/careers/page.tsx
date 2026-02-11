@@ -40,10 +40,10 @@ export default function CareersPage() {
               process managers. If you&apos;d like to join us, get in touch.
             </p>
             <CTALink
-              href="/contact"
+              href="https://calendly.com/kabirfarhan/40min"
               variant="primary"
               className="mt-6"
-              aria-label="Get in touch - Contact itenx"
+              aria-label="Get in touch - Schedule a call with itenx"
             >
               Get in touch
             </CTALink>

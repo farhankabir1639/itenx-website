@@ -101,9 +101,9 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
         className="flex flex-col items-center gap-4 py-12 sm:flex-row sm:justify-center"
       >
         <CTALink
-          href="/contact"
+          href="https://calendly.com/kabirfarhan/40min"
           variant="primary"
-          aria-label={`Start your ${service.title} project - Get in touch with itenx`}
+          aria-label={`Start your ${service.title} project - Schedule a call with itenx`}
         >
           Start your {service.title} project
         </CTALink>

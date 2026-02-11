@@ -10,7 +10,7 @@ const footerColumns = [
       { label: "About itenx", href: "/about" },
       { label: "Our services", href: "/services" },
       { label: "Case studies", href: "/case-studies" },
-      { label: "Contact us", href: "/contact" },
+      { label: "Contact us", href: "https://calendly.com/kabirfarhan/40min", external: true },
     ],
   },
   {
@@ -33,11 +33,11 @@ const footerColumns = [
   },
   {
     title: "Connect",
-      links: [
-      { label: "Follow itenx on LinkedIn", href: "https://www.linkedin.com/company/itenx" },
-      { label: "Follow itenx on Twitter", href: "https://twitter.com/itenx" },
-      { label: "View itenx on GitHub", href: "https://github.com/itenx" },
-      { label: "Email itenx", href: "/contact" },
+    links: [
+      { label: "Follow itenx on LinkedIn", href: "https://www.linkedin.com/company/itenx", external: true },
+      { label: "Follow itenx on Twitter", href: "https://twitter.com/itenx", external: true },
+      { label: "View itenx on GitHub", href: "https://github.com/itenx", external: true },
+      { label: "Schedule a call", href: "https://calendly.com/kabirfarhan/40min", external: true },
     ],
   },
 ];
@@ -63,11 +63,12 @@ export default function Footer() {
                 {column.title}
               </h3>
               <ul className="space-y-3">
-                {column.links.map((link, i) => (
+                {column.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-sm text-slate-400 transition-colors hover:text-[#00D8FF]"
+                      {...(("external" in link && link.external) && { target: "_blank", rel: "noopener noreferrer" })}
                     >
                       {link.label}
                     </Link>

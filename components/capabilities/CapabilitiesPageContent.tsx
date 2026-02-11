@@ -103,10 +103,10 @@ export default function CapabilitiesPageContent() {
           See how we&apos;ve helped clients achieve their goals.
         </p>
         <CTALink
-          href="/contact"
+          href="https://calendly.com/kabirfarhan/40min"
           variant="primary"
           className="mt-8"
-          aria-label="Get in touch - Contact itenx"
+          aria-label="Get in touch - Schedule a call with itenx"
         >
           Get in touch
         </CTALink>

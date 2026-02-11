@@ -86,11 +86,11 @@ export default function Navbar() {
           {/* Get in touch CTA */}
           <div className="hidden items-center gap-4 md:flex">
             <CTALink
-              href="/contact"
+              href="https://calendly.com/kabirfarhan/40min"
               variant="primary"
               size="sm"
               showArrow={false}
-              aria-label="Get in touch - Contact itenx"
+              aria-label="Get in touch - Schedule a call with itenx"
             >
               Get in touch
             </CTALink>
@@ -163,12 +163,12 @@ export default function Navbar() {
               ))}
               <li className="mt-2 border-t border-white/10 pt-2">
                 <CTALink
-                  href="/contact"
+                  href="https://calendly.com/kabirfarhan/40min"
                   variant="primary"
                   size="sm"
                   showArrow={false}
                   className="w-full justify-center py-3"
-                  aria-label="Get in touch - Contact itenx"
+                  aria-label="Get in touch - Schedule a call with itenx"
                 >
                   Get in touch
                 </CTALink>

@@ -229,24 +229,16 @@ export default function WhyItenx() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-12 flex flex-wrap items-center justify-center gap-4"
+            className="mt-12 flex justify-center"
           >
-          <CTALink
-            href="/contact"
-            variant="primary"
-            aria-label="See how itenx can accelerate your product"
-          >
-            See How We Can Accelerate Your Product
-          </CTALink>
-          <CTALink
-            href="/contact"
-            variant="secondary"
-            showArrow={false}
-            aria-label="Schedule free architecture review"
-          >
-            Schedule Free Architecture Review
-          </CTALink>
-        </motion.div>
+            <CTALink
+              href="https://calendly.com/kabirfarhan/40min"
+              variant="primary"
+              aria-label="Schedule free architecture review"
+            >
+              Schedule Free Architecture Review
+            </CTALink>
+          </motion.div>
         </div>
 
         {/* Technologies We Master */}

@@ -28,7 +28,7 @@ export default function BlogPage() {
             engineering, and digital innovation.
           </p>
           <CTALink
-            href="/contact"
+            href="https://calendly.com/kabirfarhan/40min"
             variant="secondary"
             size="sm"
             className="mt-6"

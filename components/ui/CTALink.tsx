@@ -12,6 +12,8 @@ interface CTALinkProps {
   className?: string;
   showArrow?: boolean;
   "aria-label"?: string;
+  /** When true or href is external (http/https), opens in new tab */
+  external?: boolean;
 }
 
 export function CTALink({
@@ -22,7 +24,9 @@ export function CTALink({
   className,
   showArrow = true,
   "aria-label": ariaLabel,
+  external,
 }: CTALinkProps) {
+  const isExternal = external ?? (href.startsWith("http://") || href.startsWith("https://"));
   const base =
     "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl font-semibold transition-all duration-300 ease-out";
 
@@ -44,9 +48,14 @@ export function CTALink({
   };
 
   return (
-    <Link href={href} aria-label={ariaLabel} className="inline-block">
+    <Link
+      href={href}
+      aria-label={ariaLabel}
+      className={cn("inline-block", className)}
+      {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+    >
       <motion.span
-        className={cn(base, variants[variant], sizes[size], className)}
+        className={cn(base, variants[variant], sizes[size])}
         style={{ display: "inline-flex" }}
         whileHover={{
           scale: 1.02,

@@ -99,27 +99,19 @@ export default function Hero() {
           scale.
         </motion.p>
 
-        {/* CTA buttons */}
+        {/* CTA button */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.6 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-4"
+          className="mt-12 flex justify-center"
         >
           <CTALink
-            href="/contact"
+            href="https://calendly.com/kabirfarhan/40min"
             variant="primary"
-            aria-label="Start a project - Contact itenx for your next software project"
+            aria-label="Schedule a call - Book a meeting with itenx"
           >
-            Start a project
-          </CTALink>
-          <CTALink
-            href="/services"
-            variant="secondary"
-            showArrow={false}
-            aria-label="Explore itenx technology services"
-          >
-            Explore services
+            Schedule a Call
           </CTALink>
         </motion.div>
 
