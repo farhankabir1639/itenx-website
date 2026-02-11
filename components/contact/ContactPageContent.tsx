@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ContactForm } from "./ContactForm";
 
 const companyInfo = [
   { label: "Email", value: "hello@itenx.com" },
@@ -42,14 +43,7 @@ const faqs = [
 ];
 
 export default function ContactPageContent() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => setIsSubmitting(false), 1500);
-  };
 
   return (
     <div className="space-y-20 py-12">
@@ -60,58 +54,7 @@ export default function ContactPageContent() {
           animate={{ opacity: 1, y: 0 }}
           className="rounded-2xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-xl lg:p-8"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-slate-300">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Your name"
-                  required
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-[#00D8FF]/50 focus:outline-none focus:ring-1 focus:ring-[#00D8FF]/30"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-slate-300">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@company.com"
-                  required
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-[#00D8FF]/50 focus:outline-none focus:ring-1 focus:ring-[#00D8FF]/30"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-slate-300">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                placeholder="Tell us about your project..."
-                required
-                className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-[#00D8FF]/50 focus:outline-none focus:ring-1 focus:ring-[#00D8FF]/30"
-              />
-            </div>
-            <motion.button
-              type="submit"
-              disabled={isSubmitting}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="rounded-xl bg-gradient-to-r from-[#00D8FF] to-cyan-400 px-8 py-4 font-semibold text-[#0A0C10] disabled:opacity-70"
-            >
-              {isSubmitting ? "Sending..." : "Send message"}
-            </motion.button>
-          </form>
+          <ContactForm />
         </motion.div>
 
         <div className="space-y-6">
