@@ -93,7 +93,7 @@ export default function Hero() {
           className="mt-12 flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            href="#contact"
+            href="/contact"
             className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 via-indigo-500 to-[#00D8FF] px-8 py-4 font-semibold text-white shadow-[0_0_30px_-5px_rgba(99,102,241,0.5)] transition-all duration-300 hover:shadow-[0_0_40px_-5px_rgba(0,216,255,0.4)] hover:scale-[1.02]"
             aria-label="Start a project - Contact itenx for your next software project"
           >
@@ -114,7 +114,7 @@ export default function Hero() {
             </svg>
           </Link>
           <Link
-            href="#services"
+            href="/services"
             className="inline-flex items-center rounded-xl border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-[#00D8FF]/50 hover:bg-white/10"
             aria-label="Explore itenx technology services"
           >

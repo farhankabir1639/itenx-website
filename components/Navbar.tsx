@@ -6,10 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#why-itenx", label: "Capabilities" },
-  { href: "#contact", label: "Contact" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/capabilities", label: "Capabilities" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -85,7 +85,7 @@ export default function Navbar() {
           {/* Get in touch CTA */}
           <div className="hidden items-center gap-4 md:flex">
             <Link
-              href="#contact"
+              href="/contact"
               className="rounded-xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-[#00D8FF]/50 hover:bg-white/10 hover:text-[#00D8FF]"
               aria-label="Get in touch - Contact itenx"
             >
@@ -160,7 +160,7 @@ export default function Navbar() {
               ))}
               <li className="mt-2 border-t border-white/10 pt-2">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="block rounded-xl bg-gradient-to-r from-[#00D8FF] to-cyan-400 px-4 py-3 text-center font-medium text-[#0A0C10]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

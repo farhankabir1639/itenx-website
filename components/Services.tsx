@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const services = [
   {
+    slug: "software-development",
     title: "Software Development",
     description:
       "Bespoke enterprise software, APIs, and scalable solutions delivered by senior engineers.",
@@ -19,6 +21,7 @@ const services = [
     ),
   },
   {
+    slug: "web-development",
     title: "Web Development",
     description:
       "Modern, performant websites and web apps built with React, Next.js, and cutting-edge stack.",
@@ -34,6 +37,7 @@ const services = [
     ),
   },
   {
+    slug: "ui-ux-design",
     title: "UI/UX Design",
     description:
       "User-centered design that delights, converts, and drives engagement across every touchpoint.",
@@ -49,6 +53,7 @@ const services = [
     ),
   },
   {
+    slug: "it-infrastructure",
     title: "IT Infrastructure",
     description:
       "Cloud architecture, DevOps, security, and infrastructure that scales with your business.",
@@ -64,6 +69,7 @@ const services = [
     ),
   },
   {
+    slug: "consulting",
     title: "Consulting",
     description:
       "Strategic technology advisory to align your stack, processes, and roadmap with your goals.",
@@ -79,6 +85,7 @@ const services = [
     ),
   },
   {
+    slug: "digital-transformation",
     title: "Digital Transformation",
     description:
       "End-to-end modernization of processes, systems, and culture for the digital age.",
@@ -116,8 +123,8 @@ export default function Services() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
+            <Link key={service.slug} href={`/services/${service.slug}`}>
             <motion.article
-              key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -139,8 +146,15 @@ export default function Services() {
                 <p className="mt-3 text-sm leading-relaxed text-slate-400">
                   {service.description}
                 </p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#00D8FF] group-hover:underline">
+                  Learn more
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
               </div>
             </motion.article>
+            </Link>
           ))}
         </div>
       </div>

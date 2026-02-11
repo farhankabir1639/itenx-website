@@ -6,29 +6,29 @@ import { motion } from "framer-motion";
 const footerColumns = [
   {
     title: "Company",
-      links: [
-      { label: "About itenx", href: "#about" },
-      { label: "Our services", href: "#services" },
-      { label: "Case studies", href: "#case-studies" },
-      { label: "Contact us", href: "#contact" },
+    links: [
+      { label: "About itenx", href: "/about" },
+      { label: "Our services", href: "/services" },
+      { label: "Case studies", href: "/case-studies" },
+      { label: "Contact us", href: "/contact" },
     ],
   },
   {
     title: "Services",
-      links: [
-      { label: "Software development services", href: "#services" },
-      { label: "Web development services", href: "#services" },
-      { label: "UI/UX design services", href: "#services" },
-      { label: "IT infrastructure services", href: "#services" },
+    links: [
+      { label: "Software development", href: "/services/software-development" },
+      { label: "Web development", href: "/services/web-development" },
+      { label: "UI/UX design", href: "/services/ui-ux-design" },
+      { label: "IT infrastructure", href: "/services/it-infrastructure" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
+      { label: "Blog", href: "/blog" },
+      { label: "Careers", href: "/careers" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
     ],
   },
   {
@@ -37,7 +37,7 @@ const footerColumns = [
       { label: "Follow itenx on LinkedIn", href: "https://www.linkedin.com/company/itenx" },
       { label: "Follow itenx on Twitter", href: "https://twitter.com/itenx" },
       { label: "View itenx on GitHub", href: "https://github.com/itenx" },
-      { label: "Email itenx", href: "#contact" },
+      { label: "Email itenx", href: "/contact" },
     ],
   },
 ];

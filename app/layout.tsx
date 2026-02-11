@@ -17,7 +17,7 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://itenx.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://itenx.it.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
