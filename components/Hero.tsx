@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { CTALink } from "@/components/ui/CTALink";
 
 const stats = [
   { value: "50+", label: "Projects Delivered" },
@@ -106,34 +106,21 @@ export default function Hero() {
           transition={{ delay: 0.35, duration: 0.6 }}
           className="mt-12 flex flex-wrap items-center justify-center gap-4"
         >
-          <Link
+          <CTALink
             href="/contact"
-            className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 via-indigo-500 to-[#00D8FF] px-8 py-4 font-semibold text-white shadow-[0_0_30px_-5px_rgba(99,102,241,0.5)] transition-all duration-300 hover:shadow-[0_0_40px_-5px_rgba(0,216,255,0.4)] hover:scale-[1.02]"
+            variant="primary"
             aria-label="Start a project - Contact itenx for your next software project"
           >
             Start a project
-            <svg
-              className="h-5 w-5 transition-transform group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </Link>
-          <Link
+          </CTALink>
+          <CTALink
             href="/services"
-            className="inline-flex items-center rounded-xl border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-[#00D8FF]/50 hover:bg-white/10"
+            variant="secondary"
+            showArrow={false}
             aria-label="Explore itenx technology services"
           >
             Explore services
-          </Link>
+          </CTALink>
         </motion.div>
 
         {/* Floating stats row */}

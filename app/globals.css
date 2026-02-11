@@ -44,3 +44,86 @@
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
+
+/* Premium CTA animations */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px -5px rgba(0, 216, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 35px -5px rgba(0, 216, 255, 0.6);
+  }
+}
+
+@keyframes brightness-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.15);
+  }
+}
+
+.cta-primary {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6 0%,
+    #6366f1 25%,
+    #00d8ff 50%,
+    #6366f1 75%,
+    #8b5cf6 100%
+  );
+  background-size: 200% 200%;
+  transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+  animation: gradient-shift 3s ease infinite, pulse-glow 2s ease-in-out infinite;
+  box-shadow: 0 0 30px rgba(0, 216, 255, 0.5);
+}
+
+.cta-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 45%,
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.cta-primary:hover::after {
+  opacity: 1;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.cta-primary:active {
+  animation: brightness-pulse 0.3s ease;
+}

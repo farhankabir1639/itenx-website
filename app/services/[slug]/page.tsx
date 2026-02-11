@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/PageHero";
 import { services } from "@/lib/services-data";
+import { ServicePageHero } from "@/components/services/ServicePageHero";
 import ServicePageContent from "@/components/services/ServicePageContent";
 
 type Props = {
@@ -18,13 +17,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = services.find((s) => s.slug === slug);
   if (!service) return { title: "Service" };
 
+  const description =
+    (service as { seoDescription?: string; longDescription: string }).seoDescription ??
+    (service as { longDescription: string }).longDescription;
+
   return {
-    title: service.title,
-    description: service.longDescription,
-    keywords: [...service.keywords],
+    title: `${service.title} Services | itenx Technology Outsourcing`,
+    description,
+    keywords: [
+      ...service.keywords,
+      "itenx",
+      "technology outsourcing",
+      "Bangladesh",
+    ],
     openGraph: {
       title: `${service.title} | itenx`,
-      description: service.longDescription,
+      description,
     },
   };
 }
@@ -36,18 +44,20 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <article className="bg-[#0A0C10]">
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <PageHero
-          title={service.title}
-          description={service.description}
-          gradient
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Services", href: "/services" },
-            { label: service.title },
-          ]}
-        />
+      {/* Full-width hero with background image */}
+      <ServicePageHero
+        slug={service.slug}
+        title={service.title}
+        description={service.description}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: service.title },
+        ]}
+      />
 
+      {/* Page content */}
+      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <ServicePageContent service={service} />
       </div>
     </article>

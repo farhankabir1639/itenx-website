@@ -106,9 +106,9 @@ export default function Services() {
                 <p className="mt-3 text-sm leading-relaxed text-slate-400">
                   {service.description}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#00D8FF] group-hover:underline">
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#00D8FF] transition-all duration-300 group-hover:translate-x-0.5 group-hover:underline">
                   Learn more
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </span>

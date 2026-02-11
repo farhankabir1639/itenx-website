@@ -97,9 +97,9 @@ export default function Contact() {
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.02, boxShadow: "0 0 35px rgba(0, 216, 255, 0.5)" }}
               whileTap={{ scale: 0.98 }}
-              className="relative overflow-hidden rounded-xl bg-gradient-to-r from-[#00D8FF] to-cyan-400 px-8 py-4 font-semibold text-[#0A0C10] transition-opacity disabled:opacity-70"
+              className="cta-primary relative overflow-hidden rounded-xl border border-[#00D8FF]/40 px-8 py-4 font-semibold text-white shadow-[0_0_20px_-5px_rgba(0,216,255,0.3)] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               <span className="relative z-10">
                 {isSubmitting ? "Sending..." : "Send message"}

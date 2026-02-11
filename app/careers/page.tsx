@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { CTALink } from "@/components/ui/CTALink";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -39,26 +39,14 @@ export default function CareersPage() {
               We&apos;re always looking for talented engineers, designers, and
               process managers. If you&apos;d like to join us, get in touch.
             </p>
-            <Link
+            <CTALink
               href="/contact"
-              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#00D8FF] to-cyan-400 px-8 py-4 font-semibold text-[#0A0C10] transition-opacity hover:opacity-90"
+              variant="primary"
+              className="mt-6"
+              aria-label="Get in touch - Contact itenx"
             >
               Get in touch
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </Link>
+            </CTALink>
           </div>
         </div>
       </div>

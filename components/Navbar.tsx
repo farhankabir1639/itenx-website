@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { CTALink } from "@/components/ui/CTALink";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -84,13 +85,15 @@ export default function Navbar() {
 
           {/* Get in touch CTA */}
           <div className="hidden items-center gap-4 md:flex">
-            <Link
+            <CTALink
               href="/contact"
-              className="rounded-xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-[#00D8FF]/50 hover:bg-white/10 hover:text-[#00D8FF]"
+              variant="primary"
+              size="sm"
+              showArrow={false}
               aria-label="Get in touch - Contact itenx"
             >
               Get in touch
-            </Link>
+            </CTALink>
           </div>
 
           {/* Mobile menu button */}
@@ -159,13 +162,16 @@ export default function Navbar() {
                 </motion.li>
               ))}
               <li className="mt-2 border-t border-white/10 pt-2">
-                <Link
+                <CTALink
                   href="/contact"
-                  className="block rounded-xl bg-gradient-to-r from-[#00D8FF] to-cyan-400 px-4 py-3 text-center font-medium text-[#0A0C10]"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  variant="primary"
+                  size="sm"
+                  showArrow={false}
+                  className="w-full justify-center py-3"
+                  aria-label="Get in touch - Contact itenx"
                 >
                   Get in touch
-                </Link>
+                </CTALink>
               </li>
             </motion.ul>
           </motion.div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { CTALink } from "@/components/ui/CTALink";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -27,26 +27,15 @@ export default function BlogPage() {
             Coming soon. Subscribe or check back for articles on technology,
             engineering, and digital innovation.
           </p>
-          <Link
+          <CTALink
             href="/contact"
-            className="mt-6 inline-flex items-center gap-2 text-[#00D8FF] hover:underline"
+            variant="secondary"
+            size="sm"
+            className="mt-6"
+            aria-label="Get in touch to stay updated"
           >
             Get in touch to stay updated
-            <svg
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </Link>
+          </CTALink>
         </div>
       </div>
     </article>

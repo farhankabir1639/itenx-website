@@ -1,8 +1,19 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { CTALink } from "@/components/ui/CTALink";
 import { services } from "@/lib/services-data";
+
+const serviceIcons: Record<string, string> = {
+  "software-development": "/images/services/software-dev.png",
+  "web-development": "/images/services/web-dev.png",
+  "ui-ux-design": "/images/services/ui-ux.png",
+  "it-infrastructure": "/images/services/infrastructure.png",
+  consulting: "/images/services/consulting.png",
+  "digital-transformation": "/images/services/transformation.png",
+};
 
 const techStack = [
   "React",
@@ -43,10 +54,15 @@ export default function ServicesPageContent() {
                 href={`/services/${service.slug}`}
                 className="group block rounded-2xl border border-white/15 bg-white/[0.04] p-6 transition-all duration-300 hover:border-[#00D8FF]/40 hover:bg-white/[0.08]"
               >
-                <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[#00D8FF]/20 bg-[#00D8FF]/10 text-[#00D8FF">
-                  <span className="font-heading text-sm font-bold">
-                    {service.title.slice(0, 1)}
-                  </span>
+                <span className="mb-4 inline-flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#00D8FF]/20 bg-white/[0.06] shadow-[0_0_15px_-5px_rgba(0,216,255,0.2)] backdrop-blur-sm transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_24px_-5px_rgba(0,216,255,0.35)]">
+                  <Image
+                    src={serviceIcons[service.slug] ?? "/images/services/software-dev.png"}
+                    alt={`${service.title} icon`}
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                    loading="lazy"
+                  />
                 </span>
                 <h2 className="font-heading text-xl font-semibold text-white">
                   {service.title}
@@ -134,26 +150,14 @@ export default function ServicesPageContent() {
         <p className="mx-auto mt-4 max-w-xl text-slate-400">
           Tell us about your goals. We&apos;ll get back within 24 hours.
         </p>
-        <Link
+        <CTALink
           href="/contact"
-          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#00D8FF] to-cyan-400 px-8 py-4 font-semibold text-[#0A0C10] transition-opacity hover:opacity-90"
+          variant="primary"
+          className="mt-8"
+          aria-label="Get in touch - Contact itenx"
         >
           Get in touch
-          <svg
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </Link>
+        </CTALink>
       </motion.section>
     </>
   );

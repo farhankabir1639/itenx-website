@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { CTALink } from "@/components/ui/CTALink";
 
 type Service = (typeof import("@/lib/services-data").services)[number];
 
@@ -19,7 +20,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
         className="prose prose-invert max-w-none"
       >
         <h2 className="font-heading text-xl font-semibold text-white">
-          Overview
+          What we offer
         </h2>
         <p className="mt-4 leading-relaxed text-slate-400">
           {service.longDescription}
@@ -33,7 +34,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
         transition={{ delay: 0.1 }}
       >
         <h2 className="font-heading text-xl font-semibold text-white">
-          What we do
+          How we deliver
         </h2>
         <ul className="mt-6 space-y-4">
           {service.whatWeDo.map((item, i) => (
@@ -78,7 +79,7 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
         transition={{ delay: 0.3 }}
       >
         <h2 className="font-heading text-xl font-semibold text-white">
-          Example projects
+          Recent work
         </h2>
         <ul className="mt-4 space-y-2">
           {service.exampleProjects.map((project) => (
@@ -99,32 +100,21 @@ export default function ServicePageContent({ service }: ServicePageContentProps)
         transition={{ delay: 0.4 }}
         className="flex flex-col items-center gap-4 py-12 sm:flex-row sm:justify-center"
       >
-        <Link
+        <CTALink
           href="/contact"
-          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#00D8FF] to-cyan-400 px-8 py-4 font-semibold text-[#0A0C10] transition-opacity hover:opacity-90"
+          variant="primary"
+          aria-label={`Start your ${service.title} project - Get in touch with itenx`}
         >
-          Start a project
-          <svg
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </Link>
-        <Link
+          Start your {service.title} project
+        </CTALink>
+        <CTALink
           href="/services"
-          className="rounded-xl border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white transition-colors hover:bg-white/10"
+          variant="secondary"
+          showArrow={false}
+          aria-label="Explore all itenx technology services"
         >
-          View all services
-        </Link>
+          Explore all services
+        </CTALink>
       </motion.section>
     </div>
   );
