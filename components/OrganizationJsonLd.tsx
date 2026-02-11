@@ -11,7 +11,18 @@ const organizationSchema = {
     url: `${siteUrl}/favicon.ico`,
   },
   description:
-    "World-class engineering, design, and software solutions. Trusted technology outsourcing partner in Bangladesh.",
+    "Premium technology outsourcing company specializing in software development, AI engineering, and digital transformation.",
+  knowsAbout: [
+    "Software Development",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Web Development",
+    "Cloud Infrastructure",
+    "Digital Transformation",
+    "LLM Integration",
+    "RAG Systems",
+    "Enterprise Software",
+  ],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Dhaka",

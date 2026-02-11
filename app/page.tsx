@@ -7,19 +7,28 @@ import CaseStudies from "@/components/CaseStudies";
 import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
-  title: "Premium Technology Outsourcing & IT Staffing | itenx",
+  title: "Why Choose itenx | Elite Software Engineering & AI",
   description:
-    "itenx delivers world-class software development, web development, UI/UX design, and digital transformation. Trusted IT staffing and technology outsourcing partner in Bangladesh for staff augmentation and engineering solutions.",
+    "Discover why leading companies choose itenx for software development outsourcing, AI engineering, and digital transformation. 40% faster delivery, 60% cost savings, Fortune 500 quality. Machine learning development, LLM integration, RAG systems.",
   keywords: [
+    "software development outsourcing",
+    "AI engineering services",
+    "machine learning development",
+    "custom software development",
+    "offshore development",
+    "Bangladesh tech outsourcing",
+    "LLM integration",
+    "RAG systems",
+    "enterprise software development",
+    "digital transformation services",
     "technology outsourcing",
     "IT staffing",
-    "software staffing",
-    "staff augmentation",
-    "software development outsourcing",
-    "web development",
-    "digital transformation",
-    "IT consulting Bangladesh",
   ],
+  openGraph: {
+    title: "Why Leading Companies Choose itenx",
+    description:
+      "Elite engineering team, AI/ML expertise, 40% faster delivery, 60% cost savings. Software development outsourcing Bangladesh.",
+  },
 };
 
 export default function HomePage() {
