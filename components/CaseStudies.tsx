@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const caseStudies = [
@@ -9,6 +10,8 @@ const caseStudies = [
     description:
       "Scalable payment orchestration platform for a leading European fintech, processing millions of transactions daily.",
     gradient: "from-violet-500/20 to-cyan-500/20",
+    image: "/images/case-studies/fintech-platform.png",
+    alt: "FinTech platform case study - software development and payment orchestration by itenx",
   },
   {
     title: "E-Commerce Redesign",
@@ -16,6 +19,8 @@ const caseStudies = [
     description:
       "Full redesign and migration of a retail brand's e-commerce experience, doubling conversion rates.",
     gradient: "from-amber-500/20 to-rose-500/20",
+    image: "/images/case-studies/ecommerce-redesign.png",
+    alt: "E-commerce redesign case study - web development and UX by itenx",
   },
   {
     title: "Healthcare Portal",
@@ -23,6 +28,8 @@ const caseStudies = [
     description:
       "HIPAA-compliant patient portal and telehealth platform for a regional hospital network.",
     gradient: "from-emerald-500/20 to-cyan-500/20",
+    image: "/images/case-studies/healthcare-portal.png",
+    alt: "Healthcare portal case study - digital transformation and telehealth by itenx",
   },
 ];
 
@@ -56,13 +63,28 @@ export default function CaseStudies() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
               whileHover={{ scale: 1.02 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] transition-all duration-300 hover:border-[#00D8FF]/20"
+              className="group relative overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.02] transition-all duration-300 hover:border-[#00D8FF]/20"
             >
+              {/* Case study thumbnail background */}
+              <div className="absolute inset-0 rounded-[16px]">
+                <Image
+                  src={study.image}
+                  alt={study.alt}
+                  fill
+                  className="rounded-[16px] object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                {/* Gradient overlay for text readability */}
+                <div
+                  className={`absolute inset-0 rounded-[16px] bg-gradient-to-t from-[#0A0C10] via-[#0A0C10]/80 to-transparent`}
+                />
+              </div>
               {/* Gradient overlay on hover */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
+                className={`absolute inset-0 rounded-[16px] bg-gradient-to-br ${study.gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
               />
-              <div className="absolute inset-0 bg-[#0A0C10]/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="absolute inset-0 rounded-[16px] bg-[#0A0C10]/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
               <div className="relative flex min-h-[280px] flex-col p-8">
                 <span className="mb-4 inline-block text-xs font-medium uppercase tracking-wider text-[#00D8FF]">

@@ -26,9 +26,12 @@ export const metadata: Metadata = {
     template: "%s | itenx technologies limited",
   },
   description:
-    "World-class engineering, design, and software solutions. Trusted technology outsourcing partner in Bangladesh. Based in Dhaka, serving clients globally.",
+    "World-class engineering, design, and software solutions. Premium technology outsourcing and IT staffing partner in Bangladesh. Trusted for software development, web development, and digital transformation. Based in Dhaka, serving clients globally.",
   keywords: [
     "technology outsourcing",
+    "IT staffing",
+    "software staffing",
+    "tech talent Bangladesh",
     "software development Bangladesh",
     "web development Dhaka",
     "IT consulting Bangladesh",
@@ -37,6 +40,9 @@ export const metadata: Metadata = {
     "software solutions",
     "technology partner Dhaka",
     "engineering outsourcing",
+    "staff augmentation",
+    "developer staffing",
+    "IT recruitment Bangladesh",
     "itenx",
   ],
   authors: [{ name: "itenx technologies limited", url: siteUrl }],
@@ -52,15 +58,17 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "itenx technologies limited",
-    title: "itenx technologies limited | Premium Technology Outsourcing",
+    title: "itenx technologies limited | Premium Technology Outsourcing & IT Staffing",
     description:
-      "World-class engineering, design, and software solutions. Trusted technology outsourcing partner in Bangladesh.",
+      "World-class engineering, design, and software solutions. Trusted technology outsourcing and IT staffing partner in Bangladesh. Software development, web development, digital transformation.",
+    images: [{ url: "/images/hero-bg.png", width: 1920, height: 1080, alt: "itenx technology outsourcing and IT staffing - engineering and software development" }],
   },
   twitter: {
-    card: "summary",
-    title: "itenx technologies limited | Premium Technology Outsourcing",
+    card: "summary_large_image",
+    title: "itenx technologies limited | Premium Technology Outsourcing & IT Staffing",
     description:
-      "World-class engineering, design, and software solutions. Trusted technology outsourcing partner in Bangladesh.",
+      "World-class engineering, design, and software solutions. Trusted technology outsourcing and IT staffing partner in Bangladesh.",
+    images: ["/images/hero-bg.png"],
   },
   robots: {
     index: true,
@@ -97,6 +105,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" as="image" href="/images/hero-bg.png" />
+      </head>
       <body
         className={`${syne.variable} ${dmSans.variable} bg-[#0A0C10] text-slate-100 font-sans min-h-screen antialiased`}
       >

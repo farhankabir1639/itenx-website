@@ -11,25 +11,39 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-4 py-24 sm:px-6 lg:px-8">
-      {/* Premium animated gradient background */}
-      <div className="absolute inset-0 -z-10">
-        {/* Base gradient orbs - more visible */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-30%,rgba(0,216,255,0.25),transparent_50%)]" />
+    <section className="relative flex min-h-screen min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-4 py-24 sm:px-6 lg:px-8">
+      {/* 1. Background image layer - absolute, full size, lowest z-index */}
+      <div
+        className="absolute inset-0 left-0 top-0 h-full w-full bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          zIndex: 0,
+        }}
+        aria-hidden
+      />
+      {/* 2. Dark gradient overlay - makes text readable, shows cyan circuit pattern through */}
+      <div
+        className="absolute inset-0 left-0 top-0 h-full w-full"
+        style={{
+          background: "linear-gradient(to bottom, rgba(10, 12, 16, 0.75), rgba(10, 12, 16, 0.9))",
+          zIndex: 1,
+        }}
+        aria-hidden
+      />
+      {/* 3. Accent gradient orbs - subtle cyan/indigo glow */}
+      <div className="absolute inset-0 left-0 top-0 h-full w-full" style={{ zIndex: 2 }}>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-30%,rgba(0,216,255,0.2),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_40%,rgba(99,102,241,0.15),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_15%_70%,rgba(0,216,255,0.12),transparent_50%)]" />
-        {/* Animated mesh gradient */}
         <motion.div
-          animate={{
-            opacity: [0.4, 0.7, 0.4],
-          }}
+          animate={{ opacity: [0.4, 0.7, 0.4] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute inset-0 bg-[radial-gradient(ellipse_120%_100%_at_50%_50%,rgba(0,216,255,0.08),transparent_70%)]"
         />
         <motion.div
-          animate={{
-            backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
-          }}
+          animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute inset-0 opacity-60"
           style={{
@@ -38,7 +52,6 @@ export default function Hero() {
             backgroundSize: "400% 400%",
           }}
         />
-        {/* Subtle grid */}
         <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
@@ -49,7 +62,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mx-auto max-w-5xl text-center">
+      {/* 4. Content - relative, high z-index, on top of all background layers */}
+      <div className="relative z-10 mx-auto max-w-5xl text-center">
         {/* Pre-headline tag */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
