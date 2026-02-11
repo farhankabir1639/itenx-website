@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { CTALink } from "@/components/ui/CTALink";
 import { cn } from "@/lib/utils";
@@ -10,10 +11,12 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/capabilities", label: "Capabilities" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -72,12 +75,24 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="group/link relative text-sm font-medium text-slate-300 transition-colors hover:text-white"
+                  className={cn(
+                    "group/link relative text-sm font-medium transition-colors hover:text-white",
+                    pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+                      ? "text-white"
+                      : "text-slate-300"
+                  )}
                   onClick={() => setIsMobileMenuOpen(false)}
                   aria-label={`Navigate to ${link.label}`}
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-[#00D8FF] to-cyan-300 transition-all duration-300 group-hover/link:w-full" />
+                  <span
+                    className={cn(
+                      "absolute -bottom-1 left-0 h-px bg-gradient-to-r from-[#00D8FF] to-cyan-300 transition-all duration-300 group-hover/link:w-full",
+                      pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+                        ? "w-full"
+                        : "w-0"
+                    )}
+                  />
                 </Link>
               </motion.li>
             ))}
@@ -152,13 +167,18 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * i }}
                 >
-                  <Link
-                    href={link.href}
-                    className="block rounded-xl px-4 py-3 text-slate-300 transition-colors hover:bg-white/5 hover:text-[#00D8FF]"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "block rounded-xl px-4 py-3 transition-colors hover:bg-white/5 hover:text-[#00D8FF]",
+                    pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+                      ? "bg-white/5 text-[#00D8FF]"
+                      : "text-slate-300"
+                  )}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
                 </motion.li>
               ))}
               <li className="mt-2 border-t border-white/10 pt-2">
