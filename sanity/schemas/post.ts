@@ -129,6 +129,34 @@ export const post = defineType({
             ],
           },
         }),
+        defineArrayMember({
+          type: "object",
+          name: "inlineImage",
+          title: "Image",
+          fields: [
+            defineField({
+              name: "image",
+              type: "image",
+              options: { hotspot: true },
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "alt",
+              type: "string",
+              title: "Alt Text",
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            }),
+          ],
+          preview: {
+            select: { media: "image" },
+            prepare: ({ media }) => ({ title: "Image", media }),
+          },
+        }),
       ],
     }),
     defineField({

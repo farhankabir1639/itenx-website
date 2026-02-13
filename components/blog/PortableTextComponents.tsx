@@ -1,6 +1,32 @@
 import type { PortableTextComponents } from "@portabletext/react";
+import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
 
 export const portableTextComponents: PortableTextComponents = {
+  types: {
+    inlineImage: ({ value }) => {
+      if (!value?.image?.asset) return null;
+      const src = urlFor(value.image).width(800).height(450).url();
+      return (
+        <figure className="my-8">
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+            <Image
+              src={src}
+              alt={value.alt ?? ""}
+              fill
+              className="object-cover"
+              sizes="(max-width: 800px) 100vw, 800px"
+            />
+          </div>
+          {value.caption && (
+            <figcaption className="mt-2 text-center text-sm text-slate-500">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+  },
   block: {
     h2: ({ children }) => (
       <h2 className="font-heading mt-12 mb-4 text-2xl font-bold text-white first:mt-0 sm:text-3xl">
