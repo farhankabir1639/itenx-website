@@ -29,7 +29,7 @@ const valueCards = [
   {
     title: "60% Cost Savings Without Compromise",
     description:
-      "Why pay Silicon Valley rates for the same expertise? Our Dhaka-based engineers deliver Fortune 500-quality code at 40-60% lower costs—without time zone headaches or communication barriers. English-fluent teams, US-friendly hours, enterprise-grade security.",
+      "Premium quality at competitive rates. As a Bangladesh-based offshore software development company, we offer 40-60% cost savings without compromising on quality.",
     stats: ["40-60% cost savings", "SOC 2 compliant"],
     icon: "/images/features/cost-savings.png",
   },
@@ -130,7 +130,7 @@ export default function WhyItenx() {
           className="mb-16 text-center"
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Why Leading Companies Choose itenx
+            Why Choose itenx as Your Offshore Software Development Partner
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-400">
             We don&apos;t just build software—we architect solutions that drive

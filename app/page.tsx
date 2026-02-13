@@ -1,32 +1,29 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Services from "@/components/Services";
 import WhyItenx from "@/components/WhyItenx";
 import CaseStudies from "@/components/CaseStudies";
 import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
-  title: "Why Choose itenx | Elite Software Engineering & AI",
+  title: "Offshore Software Development Services | itenx",
   description:
-    "Discover why leading companies choose itenx for software development outsourcing, AI engineering, and digital transformation. 40% faster delivery, 60% cost savings, Fortune 500 quality. Machine learning development, LLM integration, RAG systems.",
+    "Premium offshore software development company from Bangladesh. Expert software development outsourcing with senior engineers, modern tech stack, and proven results. 12+ years experience.",
   keywords: [
+    "offshore software development",
     "software development outsourcing",
-    "AI engineering services",
-    "machine learning development",
-    "custom software development",
-    "offshore development",
-    "Bangladesh tech outsourcing",
-    "LLM integration",
-    "RAG systems",
-    "enterprise software development",
-    "digital transformation services",
-    "technology outsourcing",
-    "IT staffing",
+    "offshore software development company",
+    "offshore software development services",
+    "offshore development team",
+    "hire offshore developers",
+    "software outsourcing",
+    "bangladesh software development",
   ],
   openGraph: {
-    title: "Why Leading Companies Choose itenx",
+    title: "Offshore Software Development Services | itenx",
     description:
-      "Elite engineering team, AI/ML expertise, 40% faster delivery, 60% cost savings. Software development outsourcing Bangladesh.",
+      "Premium offshore software development company from Bangladesh. Expert software development outsourcing with senior engineers and 12+ years experience.",
   },
 };
 
@@ -38,6 +35,7 @@ export default function HomePage() {
       <WhyItenx />
       <CaseStudies />
       <Contact />
+      <About />
     </main>
   );
 }

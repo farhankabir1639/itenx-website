@@ -14,10 +14,12 @@ export default function Contact() {
           className="mb-16 text-center"
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Get in Touch
+            Ready to Start Your Offshore Software Development Project?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-400">
-            Fill out the form below and we&apos;ll respond within 24 hours.
+            Tell us about your needs. Whether you need to hire offshore
+            developers or partner with a full-service software development
+            outsourcing company, we&apos;re here to help.
           </p>
         </motion.div>
 

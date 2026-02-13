@@ -17,13 +17,23 @@ export default function About() {
           className="text-center"
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            About itenx
+            Your Offshore Development Team, Engineered for Success
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
-            Founded in Bangladesh with offices in the US, itenx is built by
-            senior engineers, designers, and process managers who deliver
-            world-class technology solutions. We combine cost-effective talent
-            from Dhaka with client-facing presence in key markets.
+            itenx is an offshore software development company based in
+            Bangladesh with a strategic presence in the US. We combine the
+            cost-effectiveness of offshore outsourcing with the quality standards
+            of senior engineering teams.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-400">
+            Founded by experienced technologists, we deliver world-class
+            software development services across the full technology
+            lifecycle—from MVPs to enterprise-scale platforms.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-400">
+            With 12+ years of experience in software outsourcing, we&apos;ve
+            built lasting partnerships with clients who demand both technical
+            excellence and transparent collaboration.
           </p>
           <Link
             href="/about"

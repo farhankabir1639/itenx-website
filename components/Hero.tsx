@@ -73,7 +73,7 @@ export default function Hero() {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-medium text-slate-300 backdrop-blur-sm">
             <span className="text-[#00D8FF]">☆</span>
-            PREMIUM TECHNOLOGY OUTSOURCING
+            OFFSHORE SOFTWARE DEVELOPMENT
           </span>
         </motion.div>
 
@@ -84,8 +84,9 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="font-heading text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          <span className="block text-white">Engineering Tomorrow.</span>
-          <span className="mt-2 block text-slate-400">Delivered Today.</span>
+          <span className="block text-white">
+            Offshore Software Development Services That Deliver Excellence
+          </span>
         </motion.h1>
 
         <motion.p
@@ -94,9 +95,9 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg"
         >
-          itenx technologies limited delivers world-class engineering, design,
-          and software solutions—trusted by teams that demand excellence at
-          scale.
+          Premium software development outsourcing from Bangladesh to the world.
+          We&apos;re a team of senior engineers delivering scalable solutions
+          with modern technology—trusted by enterprises and startups alike.
         </motion.p>
 
         {/* CTA button */}

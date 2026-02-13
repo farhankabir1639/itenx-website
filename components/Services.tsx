@@ -9,7 +9,7 @@ const services = [
     slug: "software-development",
     title: "Software Development",
     description:
-      "Bespoke enterprise software, APIs, and scalable solutions delivered by senior engineers.",
+      "Bespoke enterprise software, APIs, and scalable solutions. Our offshore software development services cover full-stack development, microservices architecture, and cloud-native applications.",
     icon: "/images/services/software-dev.png",
     alt: "Software development and engineering - itenx technology outsourcing",
   },
@@ -17,7 +17,7 @@ const services = [
     slug: "web-development",
     title: "Web Development",
     description:
-      "Modern, performant websites and web apps built with React, Next.js, and cutting-edge stack.",
+      "Modern, performant websites and web applications built with React, Next.js, and the latest frameworks. We specialize in JAMstack architecture and headless CMS integrations.",
     icon: "/images/services/web-dev.png",
     alt: "Web development services - React, Next.js - itenx",
   },
@@ -66,11 +66,12 @@ export default function Services() {
           className="mb-16 text-center"
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Our Services
+            Comprehensive Software Development Outsourcing Services
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-400">
-            Premium technology outsourcing across software, web, design, IT,
-            consulting, and digital transformation.
+            From web development to cloud infrastructure, our offshore development
+            team brings deep expertise across the modern technology stack. Every
+            service is delivered by senior engineers with proven track records.
           </p>
         </motion.div>
 
