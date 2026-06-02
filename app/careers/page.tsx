@@ -2,14 +2,20 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { CTALink } from "@/components/ui/CTALink";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://itenx.it.com";
+
 export const metadata: Metadata = {
   title: "Careers",
   description:
     "Join itenx. We're hiring engineers, designers, and process managers in Bangladesh and remotely. Build technology with a global impact.",
+  alternates: {
+    canonical: `${siteUrl}/careers`,
+  },
   openGraph: {
     title: "Careers | itenx",
     description:
       "Join itenx. Engineers, designers, process managers. Remote and Dhaka.",
+    url: `${siteUrl}/careers`,
   },
 };
 

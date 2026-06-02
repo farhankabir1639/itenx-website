@@ -2,14 +2,20 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import ContactPageContent from "@/components/contact/ContactPageContent";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://itenx.it.com";
+
 export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with itenx. We respond within 24 hours. Dhaka, Bangladesh · US offices · Remote-first. Email hello@itenx.com.",
+  alternates: {
+    canonical: `${siteUrl}/contact`,
+  },
   openGraph: {
     title: "Contact itenx | Get in Touch",
     description:
       "Contact itenx for technology outsourcing. Response within 24 hours.",
+    url: `${siteUrl}/contact`,
   },
 };
 

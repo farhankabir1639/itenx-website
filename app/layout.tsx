@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | itenx technologies limited",
   },
   description:
-    "World-class engineering, design, and software solutions. Premium technology outsourcing and IT staffing partner in Bangladesh. Trusted for software development, web development, and digital transformation. Based in Dhaka, serving clients globally.",
+    "World-class software development, AI engineering, and digital transformation. Premium technology outsourcing partner in Bangladesh, serving clients globally.",
   keywords: [
     "technology outsourcing",
     "IT staffing",
@@ -87,9 +87,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.json",
-  alternates: {
-    canonical: siteUrl,
-  },
   category: "technology",
 };
 
@@ -107,7 +104,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preload" as="image" href="/images/hero-bg.png" />
+        <link rel="preload" as="image" href="/images/hero-bg.png" fetchPriority="high" />
       </head>
       <body
         className={`${syne.variable} ${dmSans.variable} bg-[#0A0C10] text-slate-100 font-sans min-h-screen antialiased`}

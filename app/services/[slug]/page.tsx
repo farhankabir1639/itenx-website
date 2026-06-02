@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { services } from "@/lib/services-data";
 import { ServicePageHero } from "@/components/services/ServicePageHero";
 import ServicePageContent from "@/components/services/ServicePageContent";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://itenx.it.com";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -30,9 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "technology outsourcing",
       "Bangladesh",
     ],
+    alternates: {
+      canonical: `${siteUrl}/services/${service.slug}`,
+    },
     openGraph: {
       title: `${service.title} | itenx`,
       description,
+      url: `${siteUrl}/services/${service.slug}`,
     },
   };
 }
@@ -44,7 +51,11 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <article className="bg-[#0A0C10]">
-      {/* Full-width hero with background image */}
+      <BreadcrumbJsonLd items={[
+        { name: "Home", item: siteUrl },
+        { name: "Services", item: `${siteUrl}/services` },
+        { name: service.title, item: `${siteUrl}/services/${service.slug}` },
+      ]} />
       <ServicePageHero
         slug={service.slug}
         title={service.title}

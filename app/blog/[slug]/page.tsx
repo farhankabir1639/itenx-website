@@ -14,6 +14,7 @@ import { portableTextComponents } from "@/components/blog/PortableTextComponents
 import { SocialShareButtons } from "@/components/blog/SocialShareButtons";
 import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { estimateReadTime } from "@/lib/read-time";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://itenx.it.com";
 
@@ -149,6 +150,11 @@ export default async function BlogPostPage({ params }: RouteParams) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <BreadcrumbJsonLd items={[
+        { name: "Home", item: siteUrl },
+        { name: "Blog", item: `${siteUrl}/blog` },
+        { name: post.title, item: postUrl },
+      ]} />
 
       {/* Hero - Full-width featured image */}
       {post.mainImage?.url && (

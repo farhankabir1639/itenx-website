@@ -6,14 +6,20 @@ import type { BlogPost } from "@/components/blog/BlogPostCard";
 import { client } from "@/sanity/lib/client";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://itenx.it.com";
+
 export const metadata: Metadata = {
   title: "Blog & Insights | itenx",
   description:
     "Industry insights, tech trends, and company updates from itenx technologies limited.",
+  alternates: {
+    canonical: `${siteUrl}/blog`,
+  },
   openGraph: {
     title: "Blog & Insights | itenx",
     description:
       "Industry insights, tech trends, and company updates.",
+    url: `${siteUrl}/blog`,
   },
 };
 
