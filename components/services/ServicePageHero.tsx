@@ -4,6 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const serviceHeroImages: Record<string, string> = {
+  "customer-success": "/images/services/consulting-hero.png",
+  "community-engagement": "/images/services/ui-ux-hero.png",
+  "aeo-seo": "/images/services/web-dev-hero.png",
+  "customer-acquisition": "/images/services/software-dev-hero.png",
+  "media-buying": "/images/services/transformation-hero.png",
   "software-development": "/images/services/software-dev-hero.png",
   "web-development": "/images/services/web-dev-hero.png",
   "ui-ux-design": "/images/services/ui-ux-hero.png",

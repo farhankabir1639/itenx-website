@@ -73,7 +73,7 @@ export default function Hero() {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-medium text-slate-300 backdrop-blur-sm">
             <span className="text-[#00D8FF]">☆</span>
-            OFFSHORE SOFTWARE DEVELOPMENT
+            OFFSHORE SOFTWARE & BPO SERVICES
           </span>
         </motion.div>
 
@@ -95,9 +95,9 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg"
         >
-          Premium software development outsourcing from Bangladesh to the world.
-          We&apos;re a team of senior engineers delivering scalable solutions
-          with modern technology—trusted by enterprises and startups alike.
+          Premium software development and business process outsourcing from
+          Bangladesh to the world. Senior engineers, CSMs, marketers, and
+          community managers—one offshore partner, end to end.
         </motion.p>
 
         {/* CTA button */}

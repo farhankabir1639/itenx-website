@@ -6,6 +6,46 @@ import { motion } from "framer-motion";
 
 const services = [
   {
+    slug: "customer-success",
+    title: "Customer Success",
+    description:
+      "Dedicated offshore CSMs that drive retention, reduce churn, and grow account revenue. Onboarding specialists and support teams—outsourced from Bangladesh.",
+    icon: "/images/services/consulting.png",
+    alt: "Customer success outsourcing - dedicated CSMs and onboarding - itenx BPO",
+  },
+  {
+    slug: "community-engagement",
+    title: "Community Engagement",
+    description:
+      "Professional community management, moderation, and engagement programs. Discord servers, product forums, and brand advocate programs—outsourced.",
+    icon: "/images/services/ui-ux.png",
+    alt: "Community management outsourcing - Discord, forum moderation - itenx BPO",
+  },
+  {
+    slug: "aeo-seo",
+    title: "AEO & SEO Services",
+    description:
+      "Technical SEO and Answer Engine Optimization for traditional and AI-powered search. Structured data, content strategy, and organic growth programs.",
+    icon: "/images/services/web-dev.png",
+    alt: "SEO and AEO services - technical SEO, AI search optimization - itenx",
+  },
+  {
+    slug: "customer-acquisition",
+    title: "Customer Acquisition",
+    description:
+      "Full-funnel acquisition programs—offshore SDR teams, inbound lead qualification, demand generation, and pipeline management at offshore rates.",
+    icon: "/images/services/software-dev.png",
+    alt: "Customer acquisition outsourcing - SDR teams, lead generation - itenx BPO",
+  },
+  {
+    slug: "media-buying",
+    title: "Media Buying",
+    description:
+      "Paid media across Google, Meta, LinkedIn, and programmatic—managed by certified media buyers for maximum ROAS and performance.",
+    icon: "/images/services/transformation.png",
+    alt: "Media buying outsourcing - Google Ads, Meta, programmatic - itenx",
+  },
+  {
     slug: "software-development",
     title: "Software Development",
     description:
@@ -66,12 +106,12 @@ export default function Services() {
           className="mb-16 text-center"
         >
           <h2 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Comprehensive Software Development Outsourcing Services
+            Comprehensive Technology & Business Process Outsourcing Services
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-400">
-            From web development to cloud infrastructure, our offshore development
-            team brings deep expertise across the modern technology stack. Every
-            service is delivered by senior engineers with proven track records.
+            From software engineering and cloud infrastructure to customer success,
+            community, and performance marketing—our offshore teams deliver
+            across the full stack of modern business operations.
           </p>
         </motion.div>
 
