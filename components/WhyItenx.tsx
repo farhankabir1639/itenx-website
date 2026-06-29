@@ -215,14 +215,35 @@ export default function WhyItenx() {
           </motion.div>
 
           {/* Social proof */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-8 text-center text-lg text-slate-400"
+            className="mt-10"
           >
-            Trusted by startups to Fortune 500 companies across fintech, healthcare, and e-commerce
-          </motion.p>
+            <p className="mb-6 text-center text-sm font-medium uppercase tracking-wider text-slate-500">
+              Trusted by teams from
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+              {[
+                { name: "TimeTackle", tag: "YC W21" },
+                { name: "Markopolo AI", tag: null },
+                { name: "CrossFund", tag: null },
+                { name: "Insidemaps", tag: null },
+              ].map((co) => (
+                <div key={co.name} className="flex items-center gap-2">
+                  <span className="font-heading text-base font-semibold text-white/70 transition-colors hover:text-white">
+                    {co.name}
+                  </span>
+                  {co.tag && (
+                    <span className="rounded-md border border-[#00D8FF]/30 bg-[#00D8FF]/10 px-1.5 py-0.5 text-[10px] font-medium text-[#00D8FF]">
+                      {co.tag}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
           {/* CTA section */}
           <motion.div

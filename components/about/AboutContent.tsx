@@ -1,15 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { CTALink } from "@/components/ui/CTALink";
-
-const team = [
-  { name: "Alex Rahman", role: "Chief Technology Officer", initial: "AR" },
-  { name: "Sara Ahmed", role: "Head of Design", initial: "SA" },
-  { name: "Marcus Chen", role: "Engineering Lead", initial: "MC" },
-  { name: "Nadia Islam", role: "Operations & Delivery", initial: "NI" },
-];
 
 const values = [
   {
@@ -53,34 +45,6 @@ export default function AboutContent() {
           shortcuts.
         </p>
       </motion.section>
-
-      {/* Team */}
-      <section className="py-16">
-        <h2 className="mb-12 text-center font-heading text-2xl font-semibold text-white sm:text-3xl">
-          Our Team
-        </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {team.map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              whileHover={{ y: -4 }}
-              className="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#00D8FF]/30"
-            >
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#00D8FF]/20 to-cyan-500/10 text-lg font-bold text-[#00D8FF]">
-                {member.initial}
-              </div>
-              <h3 className="font-heading font-semibold text-white">
-                {member.name}
-              </h3>
-              <p className="mt-1 text-sm text-slate-400">{member.role}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* Values */}
       <section className="py-16">

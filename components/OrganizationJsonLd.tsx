@@ -52,11 +52,7 @@ const organizationSchema = {
     },
     geoRadius: "100000000",
   },
-  sameAs: [
-    "https://www.linkedin.com/company/itenx",
-    "https://twitter.com/itenx",
-    "https://github.com/itenx",
-  ],
+  sameAs: [],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",

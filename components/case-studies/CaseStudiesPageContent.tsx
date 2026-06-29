@@ -1,52 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-
-const caseStudies = [
-  {
-    title: "FinTech Platform",
-    category: "Software",
-    description:
-      "Scalable payment orchestration platform for a leading European fintech, processing millions of transactions daily.",
-    gradient: "from-violet-500/20 to-cyan-500/20",
-  },
-  {
-    title: "E-Commerce Redesign",
-    category: "Web",
-    description:
-      "Full redesign and migration of a retail brand's e-commerce experience, doubling conversion rates.",
-    gradient: "from-amber-500/20 to-rose-500/20",
-  },
-  {
-    title: "Healthcare Portal",
-    category: "Infrastructure",
-    description:
-      "HIPAA-compliant patient portal and telehealth platform for a regional hospital network.",
-    gradient: "from-emerald-500/20 to-cyan-500/20",
-  },
-  {
-    title: "SaaS Dashboard",
-    category: "Design",
-    description:
-      "Enterprise dashboard redesign with analytics, role-based access, and real-time data visualization.",
-    gradient: "from-indigo-500/20 to-purple-500/20",
-  },
-  {
-    title: "Logistics API",
-    category: "Software",
-    description:
-      "High-throughput API for logistics coordination, integrating carriers and warehouse systems.",
-    gradient: "from-cyan-500/20 to-blue-500/20",
-  },
-  {
-    title: "Marketing Site",
-    category: "Web",
-    description:
-      "Performance-optimized marketing site with A/B testing, analytics, and SEO best practices.",
-    gradient: "from-rose-500/20 to-orange-500/20",
-  },
-];
+import { caseStudies } from "@/lib/case-studies-data";
 
 const filters = ["All", "Software", "Web", "Design", "Infrastructure"];
 
@@ -88,7 +45,7 @@ export default function CaseStudiesPageContent() {
         <AnimatePresence mode="wait">
           {filtered.map((study, i) => (
             <motion.article
-              key={study.title}
+              key={study.slug}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -101,18 +58,36 @@ export default function CaseStudiesPageContent() {
               />
               <div className="absolute inset-0 bg-[#0A0C10]/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-              <div className="relative flex min-h-[280px] flex-col p-8">
-                <span className="mb-4 inline-block text-xs font-medium uppercase tracking-wider text-[#00D8FF]">
-                  {study.category}
-                </span>
+              <Link
+                href={`/case-studies/${study.slug}`}
+                className="relative flex min-h-[280px] flex-col p-8"
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="inline-block text-xs font-medium uppercase tracking-wider text-[#00D8FF]">
+                    {study.category}
+                  </span>
+                  <span className="text-white/20">·</span>
+                  <span className="text-xs text-slate-500">{study.industry}</span>
+                </div>
                 <h3 className="font-heading text-xl font-semibold text-white">
                   {study.title}
                 </h3>
                 <p className="mt-4 flex-1 text-sm text-slate-400">
                   {study.description}
                 </p>
+
+                {/* Metrics preview */}
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  {study.metrics.slice(0, 2).map((m) => (
+                    <div key={m.label} className="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2">
+                      <p className="font-heading text-base font-bold text-[#00D8FF]">{m.value}</p>
+                      <p className="text-xs text-slate-500">{m.label}</p>
+                    </div>
+                  ))}
+                </div>
+
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#00D8FF] opacity-0 transition-opacity group-hover:opacity-100">
-                  Read more
+                  Read case study
                   <svg
                     className="h-4 w-4"
                     fill="none"
@@ -128,7 +103,7 @@ export default function CaseStudiesPageContent() {
                     />
                   </svg>
                 </span>
-              </div>
+              </Link>
             </motion.article>
           ))}
         </AnimatePresence>

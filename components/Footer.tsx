@@ -34,9 +34,6 @@ const footerColumns = [
   {
     title: "Connect",
     links: [
-      { label: "Follow itenx on LinkedIn", href: "https://www.linkedin.com/company/itenx", external: true },
-      { label: "Follow itenx on Twitter", href: "https://twitter.com/itenx", external: true },
-      { label: "View itenx on GitHub", href: "https://github.com/itenx", external: true },
       { label: "Schedule a call", href: "https://calendly.com/kabirfarhan/40min", external: true },
     ],
   },
