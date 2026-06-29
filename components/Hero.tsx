@@ -63,7 +63,7 @@ export default function Hero() {
       </div>
 
       {/* 4. Content - relative, high z-index, on top of all background layers */}
-      <div className="relative z-10 mx-auto max-w-5xl text-center">
+      <div className="relative z-10 mx-auto max-w-5xl pt-16 text-center">
         {/* Pre-headline tag */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
