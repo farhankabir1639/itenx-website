@@ -26,7 +26,6 @@ const footerColumns = [
     title: "Resources",
     links: [
       { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "/careers" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
     ],
